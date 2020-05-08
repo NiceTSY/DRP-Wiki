@@ -7,4 +7,3 @@ The wiki can be found there: https://github.com/OfficialDarkzy/DRP-Core/wiki
 # Diagram of possible error when installing DRP Framework
 
 ![Diagram](./Error%20diagram/Error%20Diagram.svg)
-<img src="./Error%20diagram/Error%20Diagram.svg">
