@@ -153,7 +153,7 @@ Manually
 - Import the **core.sql** to your database, either by using the import function from PHPmyAdmin or any other Database Tool of your choice.
 - Change your **server.cfg** accordingly with all the resources you added in the previous step and comment the `ensure fivem` line. It should look like this:
 
-![server.cgf](https://i.ibb.co/vBnqvkR/ressource-cfg1.png)
+![server.cgf](https://i.ibb.co/YLN3VWM/config-cfg-1.png)
 
 **2. Install DRP-ID scripts**
 
@@ -161,12 +161,12 @@ Manually
 
 With FVM
 
-    fvm install --save --folder=DRP OfficialDarkzy/DRP-ID
+	fvm install --save --folder=DRP OfficialDarkzy/DRP-ID
 
 With Git
 
-    cd resources
-    git clone https://github.com/OfficialDarkzy/DRP-ID [DRP]
+	cd resources
+	git clone https://github.com/OfficialDarkzy/DRP-ID [DRP]
 
 Manually
 
@@ -179,91 +179,63 @@ Manually
 - Import all the table from the different resources (the **.sql** files) to your database, either by using the import function from PHPmyAdmin or any other Database Tool of your choice.
 - Change your **server.cfg** accordingly with all the resources you added in the previous step. It should now look like this:
 
-![server.cgf](https://i.ibb.co/VwpgJyc/resource-cfg2.png)
+![server.cgf](https://i.ibb.co/2gkW0Yg/config-cfg-2.png)
 
-**3. DatabaseAPI and externalSQL configuration**
+**3. ExternalSQL configuration**
 
-Open the following file, with either nano or with your FTP and any NotePad app, the **config.js** file in DatabaseAPI folder and **config.lua** in externalSQL folder.
+Open the following file, with either nano or with your FTP and any NotePad app, the **config.json** in externalSQL folder.
 Change the info inside following those instructions:    
 
-**config.js**
+**Instructions**
+____
+- **host**, is where the database is, so do not change it unless it is not on the same server
+- **port**, is the port the ExternalSQL will use to talk to your database, it needs an unused one (so not 3306 which is the one used by default by MySQL/MariaDB)
+- **route**, is where the API folder is located, do not touch it unless you like boo-boo
+- **secret**, is used to encrypt the talk between ExternalSQL and the Database, it needs to be changed to a random string 
+- **community**, is the name of your community
+____
+- **connectionLimit**, is how much-simultaned connections are authorised, do not change it unless you know what you do
+- **host**, is where the database is, so do not change it unless it is not on the same server
+- **user**, is the user used for the connexion to MySQL/MariaDB (ndlr the one you created) if you have not made a new one keep root
+- **password**, is the password of the previous **user**, only add one if you have a password on with this specific **user**
+- **database**, is the name of the database where your data is, be sure it is the right name!
+____
+_Do not change those unless you know what you are doing_
+- **devmodeactive**, if the developer mode needs to be activated
+- **createtokenonstart**, if a token needs to be created
+____
 
+**config.json example**
 
-    ExternalConfig = {};
-    
-    // Port API Runs On
-    ExternalConfig.Server = {
-        // This is the port that will be used by both application
-        // to have lovely chit-chat if you change one change the other
-        port: 2000
-    }
-    
-    // Database Connection Configs
-    ExternalConfig.Database = {
-        // Not needed to change
-        connectionLimit: 100,
-        // Let it be
-        host: "localhost",
-        // This will be the user used for the connexion to MySQL
-        // ndlr the one you created, if you have not made a new one
-        // keep root
-        user: "root", 
-        // Only put a password if have a password on the user
-        password: "",
-        // This is the name of the database that it will access
-        // be sure its the right name!
-        database: "drp"
-    };
-    
-    // API Configs
-    ExternalConfig.API = {
-        // Do not change unless you know what you do
-        route: "/external/api",
-        // Fucking change this to another random string and put the same
-        // string in the config.lua of the externalsql
-        secret: "CHANGEME"
-    }
-    
-    ExternalConfig.DevModeActive = false;
-    
-    module.exports.config = ExternalConfig;
-    module.exports.server = ExternalConfig.Server;
-    module.exports.database = ExternalConfig.Database;
-    module.exports.api = ExternalConfig.API;
-    module.exports.dev = ExternalConfig.DevModeActive;
-
-**config.lua**
-
-    SQLConfig = {}
-    
-    -- Connection Configurations
-    -- Let it be
-    SQLConfig.host = "localhost"
-    -- This is the port that will be used by both application
-    -- to have lovely chit-chat, if you change one change the other
-    SQLConfig.port = 2000
-    -- Do not change unless you know what you do
-    SQLConfig.apipath = "/external/api"
-    -- Fucking change this to another random string and put the same
-    -- string in the config.js of the DatabaseAPI
-    SQLConfig.secret = "CHANGEME"
-    -- The name of your community
-    SQLConfig.community = "DRP"
-    
-    -- Further Configurations
-    SQLConfig.CreateTokenOnStart = true
-    
-    --[[ DO NOT EDIT BELOW ]]--
+	{
+		"api": {
+			"host": "localhost",
+			"port": 2000,
+			"route": "/external/api",
+			"secret": "drpsecret",
+			"community": "DRP"
+		},
+		"database": {
+			"connectionLimit": 100,
+			"host": "localhost",
+			"user": "root",
+			"password": "",
+			"database": "drp"
+		},
+		
+		"devmodeactive": false,
+		"createtokenonstart": true
+	}
 
 **4. Start your server**
 
 Create a new screen session
 
- `screen -S fxserver`
+`screen -S fxserver`
 
 Go back to your server-data folder
 
- `cd /home/WhateverIsYourPath/server-data`
+`cd /home/WhateverIsYourPath/server-data`
 
 Start normally your server
 
