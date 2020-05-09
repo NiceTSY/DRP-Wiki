@@ -24,6 +24,7 @@ The whole idea came from Darkzy, to replace the ESX-framework (ES_extended) for 
 
 - [Commands](https://github.com/OfficialDarkzy/DRP-Core/wiki/Commands)
 - [Events - Server](https://github.com/OfficialDarkzy/DRP-Core/wiki/Server-Events)
+- [Events - Client](https://github.com/OfficialDarkzy/DRP-Core/wiki/Client-Events)
 - [Export Functions](https://github.com/OfficialDarkzy/DRP-Core/wiki/Export-Functions)
 - [FAQ](https://github.com/OfficialDarkzy/DRP-Core/wiki/FAQ)
 - [Help and Support](https://github.com/OfficialDarkzy/DRP-Core/wiki/Help-and-Support)
