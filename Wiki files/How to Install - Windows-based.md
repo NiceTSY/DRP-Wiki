@@ -135,7 +135,7 @@ Change the info inside following those instructions:
 
 **Instructions**
 ____
-- **host**, is where the database is, so do not change it unless it is not on the same server
+- **host**, keep it as "localhost"
 - **port**, is the port the ExternalSQL will use to talk to your database, it needs an unused one (so not 3306 which is the one used by default by MySQL/MariaDB)
 - **route**, is where the API folder is located, do not touch it unless you like boo-boo
 - **secret**, is used to encrypt the talk between ExternalSQL and the Database, it needs to be changed to a random string 
@@ -143,9 +143,13 @@ ____
 ____
 - **connectionLimit**, is how much-simultaned connections are authorised, do not change it unless you know what you do
 - **host**, is where the database is, so do not change it unless it is not on the same server
+> /!\ If using ZAP-hosting you need to put the name of the server (go to Databases under Tools in the navigation panel), it should look like that `mysql-mariadb-X-XXX.zap-hosting.com`
 - **user**, is the user used for the connexion to MySQL/MariaDB (ndlr the one you created) if you have not made a new one keep root
+> /!\ If using ZAP-hosting you need to put the user given by ZAP (go to Databases under Tools in the navigation panel), it should look like that `zapXXXXXX-X`
 - **password**, is the password of the previous **user**, only add one if you have a password on with this specific **user**
+> /!\ If using ZAP-hosting you need to put the password given by ZAP (go to Databases under Tools in the navigation panel)
 - **database**, is the name of the database where your data is, be sure it is the right name!
+> /!\ If using ZAP-hosting you need to put the database name given by ZAP (go to Databases under Tools in the navigation panel), it should look like that `zapXXXXXX-X`
 ____
 _Do not change those unless you know what you are doing_
 - **devmodeactive**, if the developer mode needs to be activated
