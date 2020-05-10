@@ -53,7 +53,7 @@ With:
     # since XAMPP 1.4.3
     <LocationMatch "^/(?i:(?:security))">
         AllowOverride AuthConfig Limit
-        Order deny, allow
+        Order deny,allow
         Allow from all
         Require all granted
         # If you only want to allow some connexion you can use Deny from all and Allow from TheIpAdressYouWantToAllow
