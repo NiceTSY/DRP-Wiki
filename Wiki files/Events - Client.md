@@ -3,7 +3,7 @@
 Following you will find all the client-side events, and their description, that are currently in use inside the DRP-Framework. For better looking they are in alphabetical order by DRP-scripts.
 
 | DRP script| Arguments | Description |
-| :---: | :---: | :---: | :--- |
+| :---: | :---: | :--- |
 | Where the events is | Argument(s) it needs | Brief description about the event |
 
 > Remember you can use **TriggerClientEvent()** from the **server side** or **TriggerEvent()** from the **client side**
