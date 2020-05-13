@@ -12,7 +12,7 @@ This document should help you install the whole DRP-Framework inside a Linux-bas
 - [Install DRP-Framework](https://github.com/OfficialDarkzy/DRP-Core/wiki/How-to-install---Linux#install-drp-framework)
     - Install DRP-Core scripts
     - Install DRP-ID scripts
-    - DatabaseAPI and externalSQL configuration
+    - ExternalSQL configuration
     - Start your server
 
 ## Prerequisites
@@ -149,11 +149,8 @@ Manually
 
 **Configuration**
 
-- Open your resource folder, go to [gamemodes] then [maps] open "fivem-map-skater" go into fxmanifest then change `resource_type 'map' { gameTypes = { ['basic_gamemode'] = true } }` to `resource_type 'map' { gameTypes = { ['drp_core'] = true } }`
 - Import the **core.sql** to your database, either by using the import function from PHPmyAdmin or any other Database Tool of your choice.
-- Change your **server.cfg** accordingly with all the resources you added in the previous step and comment the `ensure fivem` line. It should look like this:
-
-![server.cgf](https://i.ibb.co/YLN3VWM/config-cfg-1.png)
+- Change your **server.cfg** accordingly with all the resources you added in the previous step.
 
 **2. Install DRP-ID scripts**
 
@@ -179,7 +176,7 @@ Manually
 - Import all the table from the different resources (the **.sql** files) to your database, either by using the import function from PHPmyAdmin or any other Database Tool of your choice.
 - Change your **server.cfg** accordingly with all the resources you added in the previous step. It should now look like this:
 
-![server.cgf](https://i.ibb.co/2gkW0Yg/config-cfg-2.png)
+![server.cgf](https://i.ibb.co/Q95mt2P/server-cfg-3.png)
 
 **3. ExternalSQL configuration**
 
@@ -197,6 +194,7 @@ ____
 - **connectionLimit**, is how much-simultaned connections are authorised, do not change it unless you know what you do
 - **host**, is where the database is, so do not change it unless it is not on the same server
 > /!\ If using ZAP-hosting you need to put the name of the server (go to Databases under Tools in the navigation panel), it should look like that `mysql-mariadb-X-XXX.zap-hosting.com`
+- **port**, is the port used by MySQL (3306 by default)
 - **user**, is the user used for the connexion to MySQL/MariaDB (ndlr the one you created) if you have not made a new one keep root
 > /!\ If using ZAP-hosting you need to put the user given by ZAP (go to Databases under Tools in the navigation panel), it should look like that `zapXXXXXX-X`
 - **password**, is the password of the previous **user**, only add one if you have a password on with this specific **user**
@@ -222,6 +220,7 @@ ____
 		"database": {
 			"connectionLimit": 100,
 			"host": "localhost",
+			"port": 3306,
 			"user": "root",
 			"password": "",
 			"database": "drp"
