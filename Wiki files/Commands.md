@@ -1,6 +1,6 @@
 # Commands
 
-In order to use a command you need to be inside the chat (**T** key) and have the right rank (user, admin, superadmin).
+In order to use a command, you need to be inside the chat (**T** key) and have the correct rank (user, admin, superadmin).
 
 ## Contents
 
@@ -22,6 +22,8 @@ In order to use a command you need to be inside the chat (**T** key) and have th
 | adminaddcop | [database ID] | [int] | /adminaddcop 1 | Set someone as a cop | superadmin | drp_core |
 | adminrank | none | - | /adminrank | Show your admin rank | all | drp_core |
 | adminrevive | none | - | /adminrevive | Revive yourself | admin | drp_death |
+| coords | none | - | /coords | Send your current coords to the chat | admin | drp_core |
+| showcoords | none | - | /showcoords | Show on screen your current coords | admin | drp_core |
 | heal | none | - | /heal | Heal yourself | admin | drp_core |
 | tp | [x] [y] [z] | - | /tp 100 -100 80 | Teleport yourself to the specified [x] [y] [z] coords | admin | drp_core |
 | tpm | none | - | /tpm | Teleport yourself to the specified waypoint | admin | drp_core |
@@ -32,12 +34,12 @@ In order to use a command you need to be inside the chat (**T** key) and have th
 | ----------- | --- | --- | -------------------------------- | --- | --- | --- |
 | car | [vehicule] | - | /car zentorno | Teleport a [vehicule] in front of you | superadmin | drp_core |
 | dv | none | - | /dv | Delete the closest vehicule | superadmin | drp_core |
-| engine | none | - | /engine | Start/stop the engine of the vehicule you are currently in | all | drp_garage |
+| engine | none | - | /engine | Start/stop the engine of the vehicule you are currently in | all | drp_garages |
 | fix | none | - | /fix | Fix the vehicule you are in | superadmin | drp_core |
-| impound | [impound ID] | [1: Centrum; 2: Sandy Shores; 3: Paleto Bay] | /impound 1 | Impound the nearest vehicule to the specified [impound ID] garage | all | drp_garage |
-| garage | none | - | /garage | Show all your registered vehicule, either inside a garage or not | all | drp_garage |
-| hood | none | - | /hood | Open/close the hood of the vehicule you are currently in | all | drp_garage |
-| trunk | none | - | /trunk | Open/close the trunk of the vehicule you are currently in | all | drp_garage |
+| impound | [impound ID] | [1: Centrum; 2: Sandy Shores; 3: Paleto Bay] | /impound 1 | Impound the nearest vehicule to the specified [impound ID] garage | all | drp_garages |
+| garage | none | - | /garage | Show all your registered vehicule, either inside a garage or not | all | drp_garages |
+| hood | none | - | /hood | Open/close the hood of the vehicule you are currently in | all | drp_garages |
+| trunk | none | - | /trunk | Open/close the trunk of the vehicule you are currently in | all | drp_garages |
 
 ### Chat commands
 
